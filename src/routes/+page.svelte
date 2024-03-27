@@ -16,10 +16,10 @@
 	let message = 'Welcome to ACSL Club!';
 	let displayedMessage = '';
 
-	let typingTimer: number;
+	let typingTimer:any;
 
 	onMount(() => {
-		let messageSwitchTimer: number;
+		let messageSwitchTimer:any;
 
 		if (!displayedMessage) {
 			let i = 0;
