@@ -26,6 +26,8 @@
 	// Floating UI for Popups
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
+	import { base } from '$app/paths';
+	import { goto } from '$app/navigation';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 </script>
 
@@ -35,7 +37,7 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">ACSL Club</strong>
+				<button class="text-xl uppercase" on:click={()=>{goto(`${base}/`)}} on:keydown={(event) => {if (event.key === 'Enter') goto(`${base}/`);}}>ACSL Club</button>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<a
@@ -46,14 +48,14 @@
 				>
 					Discord
 				</a>
-				<!-- <a
+				<a
 					class="btn btn-sm variant-ghost-surface"
-					href="https://twitter.com/SkeletonUI"
+					href="{base}/signup"
 					target="_blank"
 					rel="noreferrer"
 				>
-					Twitter
-				</a> -->
+					Sign up
+				</a>
 				<!-- <a
 					class="btn btn-sm variant-ghost-surface"
 					href="https://github.com/skeletonlabs/skeleton"

@@ -1,6 +1,8 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import hljs from 'highlight.js/lib/core';
 	import { onMount } from 'svelte';
+	import { base } from '$app/paths';
 	let hasScrolled = false;
 	let index = 0;
 	const messages = [
@@ -183,6 +185,11 @@ class Result {
 			<a href="https://discord.gg/swT6yFGnYb" target="_blank" rel="noreferrer">
 				Join our Discord server!!!
 			</a>
+		</button>
+		<button class="btn btn-sm variant-ghost-surface m-8" on:click={()=>{
+			goto(base + '/signup')
+		}}>
+			Sign up here!!!
 		</button>
 	</div>
 {/if}
